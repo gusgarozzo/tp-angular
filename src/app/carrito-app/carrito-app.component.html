@@ -1,0 +1,7 @@
+<h2>Carrito</h2>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let movie of (cartList$ | async)">
+        Pelicula: {{movie.titulo}} (x {{movie.cantidad}}) - Total: {{movie.precio|currency}}
+    </li>
+</ul>

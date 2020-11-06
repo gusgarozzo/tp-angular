@@ -1,0 +1,39 @@
+<div class="row">
+<div class="col-9">
+<h3>Cartelera de Cine</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Titulo</th>
+            <th>Clasificación</th>
+            <th>Duración</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Compra</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let movie of movies">
+            <td><img [src]="movie.img" [alt]="movie.titulo"></td>
+            <td>{{movie.titulo}}</td>
+            <td>{{movie.clasificacion}}</td>
+            <td>{{movie.duracion}}</td>
+            <td>{{movie.precio|currency}}</td>
+            <td>{{movie.stock}}</td>
+            <td class="buy">
+                <app-input-number [(quantity)]="movie.cantidad" [max]="movie.stock " *ngIf="movie.stock" (maxReached)="maxReached($event)"></app-input-number>
+            </td>
+            <td>
+                <button class="btn btn-primary btn-sm" (click)="addToCart(movie)">Comprar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="col-3">
+    <app-carrito-app></app-carrito-app>
+</div>
+</div>

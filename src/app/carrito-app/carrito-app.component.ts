@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵsetCurrentInjector } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MovieCartService } from '../movie-cart.service';
 import { Movies } from '../movie-list/Movie';
@@ -17,5 +17,7 @@ export class CarritoAppComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
 
 }

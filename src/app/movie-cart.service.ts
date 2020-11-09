@@ -13,18 +13,23 @@ export class MovieCartService {
   constructor() { }
 
   addToCart(movie: Movies) {
-
     let item: Movies = this._cartList.find((v1)=>v1.titulo == movie.titulo);
     if(!item){
       this._cartList.push({ ... movie})
     } else{
       item.cantidad += movie.cantidad;
-      item.precio += movie.precio;
     }
     this.cartList.next(this._cartList);
     
   }
 
+  getMovies(movie: Movies){
+    let item: Movies = this._cartList.find((v1)=>v1.titulo == movie.titulo);
+    if(!item){
+      this._cartList.push({ ... movie})
+    }
+    this.cartList.next(this._cartList);
+  }
 
   
 }

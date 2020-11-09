@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Movies } from '../movie-list/Movie';
 
 @Component({
   selector: 'app-input-number',

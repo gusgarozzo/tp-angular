@@ -1,0 +1,13 @@
+<h3>Sinopsis</h3>
+<span class="mensaje" *ngIf="(cartList$ | async)?.length == 0">      
+    <p class="text-center">Agregue una película al carrito para poder ver su sinopsis</p>
+</span>
+
+<ul class="list-group" *ngFor="let movie of (cartList$ | async)">
+    <li class="list-group-item titulo">
+        {{movie.titulo}}
+    </li>
+    <li class="list-group-item sinopsis">
+        {{movie.sinopsis}}
+    </li>
+</ul>

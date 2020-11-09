@@ -6,4 +6,5 @@ export interface Movies{
     precio: number, 
     stock: number,
     cantidad: number,
+    sinopsis: string
 }
